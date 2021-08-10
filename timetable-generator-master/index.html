@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Timetable generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-colorpicker.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="js/bootstrap-colorpicker.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body style="background-image: url('img/v8_2.png'); background-color: #020f33; background-blend-mode: multiply;">
+<div style="background-color: whitesmoke; color: #020f33; font-size: 35px; font-weight: bold; padding: 2%; text-align: center;">
+	Timetable Generator
+</div>
+<div class="container" >
+	<div class="row clearfix">
+		<!-- <div class="col-md-12 column">
+			<h3 style="padding: 2%;text-align: center; font-weight: bold; font-size: 220%;">
+				Timetable Generator
+			</h3>
+		</div> -->
+	</div>
+	<div style="background-color: whitesmoke; border-radius: 8px; width: 30%; margin: auto;">
+		<div style="margin-top: 20px;">
+			<input type="file" id='fileUploader' style="margin: auto; border: 1px solid; border-radius: 5px; padding: 10px;
+			background-color: #020f33;
+			color: aliceblue; margin-top: 10%; width: 100%;" >
+		</div>
+		<div style="margin: auto; width: 100%; display: flex; align-items: center; justify-content: center;">
+			<button onclick="sendFile()" style="margin: auto; margin: 24px 0;
+			background: lightblue;
+			border: none;
+			padding: 12px;
+			border-radius: 13px;
+			text-transform: capitalize;
+			box-shadow: 0 0 1px 1px; font-weight: bolder;"> upload file</button>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-10 column"></div>
+			<!-- <div class="row clearfix" id="inputrow">
+				<div class="col-md-2 column">
+					<input type=text class="form-control" id=ccode placeholder="Course code"/>
+				</div>
+				<div class="col-md-2 column">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  id="helpicon"></i></span>
+						<input type=text class="form-control" id=cslots placeholder="Slots"/>
+					</div>
+				</div>
+				<div class="col-md-2 column"><input type=text class="form-control" id=cvenue placeholder="Venue"/></div>
+				<div class="col-md-1 column"><button style="background: green;" class="btn btn-primary" onclick="addCourse($('#ccode').val(),$('#cslots').val(),$('#cvenue').val(), $('#color').val())">Add</button></div>
+			</div> -->
+			<div class="row">&nbsp;</div> 
+			<div class="row clearfix" style="background-color: white; visibility: hidden;" id='table'>
+				<div class="col-md-12 column" style="border-radius: 5px;">
+					<table class="table table-bordered maintbl"  style="width: 100%;">
+						<thead style="background: #020f33;">
+							<tr style="font-size: 130%;color: white;">
+								<th class="tm2" style="font-size: large; color: white;">Time</th>
+								<th>Monday</th>
+								<th>Tuesday</th>
+								<th>Wednesday</th>
+								<th>Thursday</th>
+								<th>Friday</th>
+							</tr>
+						</thead>
+							<!-- <tr style="font-size: 130%;">
+								<th class=tm2 style="font-size: large;">Time</th>
+								<th>Monday</th>
+								<th>Tuesday</th>
+								<th>Wednesday</th>
+								<th>Thursday</th>
+								<th>Friday</th>
+							</tr>
+						</thead> -->
+						<tbody>
+						<tr>
+							
+							<td class="tm">
+								8:00-<br>9:00
+							</td>
+							<td class="slot-1 slot-1A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-1 slot-1B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-1 slot-1C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-1 slot-1D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-1 slot-1E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+
+						<tr>
+							
+							<td class="tm">
+								9:00-<br>10:00
+							</td>
+							<td class="slot-2 slot-2A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-2 slot-2B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-2 slot-2C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-2 slot-2D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-2 slot-2E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm >
+								10:00-<br>11:00
+							</td>
+							<td class="slot-3 slot-3A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-3 slot-3B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-3 slot-3C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-3 slot-3D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-3 slot-3E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm>
+								11:00-<br>12:00
+							</td>
+							<td class="slot-4 slot-4A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-4 slot-4B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-4 slot-4C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-4 slot-4D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-4 slot-4E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm >
+								12:00-<br>1:00
+							</td>
+							<td class="slot-5 slot-5A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-5 slot-5B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-5 slot-5C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-5 slot-5D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-5 slot-5E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td  class=tm>
+								1:00-<br>2:00
+							</td>
+							<td class="slot-6 slot-6A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-6 slot-6B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-6 slot-6C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-6 slot-6D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-6 slot-6E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm >2:00-<br>3:00</td>
+							<!-- <td class="slot-X slot-X2 slot-clash-Lx clashbuddy-X1 clashbuddy-X3" style="" ><span class="slot-name">X2</span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td> -->
+							<td class="slot-7 slot-7A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-7 slot-7B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-7 slot-7C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-7 slot-7D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-7 slot-7E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm >3:00-<br>4:00</td>
+							<td class="slot-8 slot-8A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-8 slot-8B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-8 slot-8C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-8 slot-8D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-8 slot-8E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm>4:00-<br>5:00</td>
+							<!-- <td class="slot-X slot-X3 slot-clash-Lx  clashbuddy-X2 clashbuddy-X1" style=""><span class="slot-name">X3</span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td> -->
+							<td class="slot-9 slot-9A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-9 slot-9B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-9 slot-9C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-9 slot-9D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-9 slot-9E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm>5:00-<br>6:00</td>
+							<!-- <td class="slot-X slot-X3 slot-clash-Lx  clashbuddy-X2 clashbuddy-X1" style=""><span class="slot-name">X3</span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td> -->
+							<td class="slot-10 slot-10A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-10 slot-10B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-10 slot-10C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-10 slot-10D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-10 slot-10E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+						<tr>
+							
+							<td class=tm>6:00-<br>7:00</td>
+							<!-- <td class="slot-X slot-X3 slot-clash-Lx  clashbuddy-X2 clashbuddy-X1" style=""><span class="slot-name">X3</span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td> -->
+							<td class="slot-11 slot-11A"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-11 slot-11B"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-11 slot-11C"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-11 slot-11D"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+							<td class="slot-11 slot-11E"><span class="slot-name"></span><div class="slot-deets"><span class="course-name"></span><div class="course-venue"></div></div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="col-md-2 column"><br><br></br></br>
+			<table class="table table-striped table-hover" style="background: cyan;">
+				<thead>
+					<tr>
+						<th colspan=2>
+							Course list
+						</th>
+					</tr>
+				</thead>
+				<tbody id="listb"></tbody>
+			</table>
+		</div> -->
+		
+	</div>
+	<div class=row></div>
+</div>
+<footer class="container">
+	<div class="row">
+		<ul class="col-sm-8">
+		<li class="col-sm-1"><a href="#"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg" role="button" ></a></li>
+		<li class="col-sm-1"> <a href="#"> <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg" role="button"></a></li>
+		
+	</div>
+</footer>
+</body>
+</html>

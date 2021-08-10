@@ -1,0 +1,112 @@
+[
+  {
+    "class": 3,
+    "Teacher": "Dr Odun-Ayo, Dr Oladimeji",
+    "Subject": "CIS_421",
+    "Groups": " CSC, MIS, Maths",
+    "Duration": "2",
+    "Classroom": "Hall_201 \n",
+    "Time": "15,16,",
+    "Day": "Tuesday"
+  },
+  {
+    "class": 6,
+    "Teacher": "Mr Katende",
+    "Subject": "MIS_421",
+    "Groups": " MIS",
+    "Duration": "2",
+    "Classroom": "LT2 \n",
+    "Time": "10,11,",
+    "Day": "Thursday"
+  },
+  {
+    "class": 1,
+    "Teacher": "Dr Odun-Ayo, Dr Oladimeji",
+    "Subject": "CIS_421",
+    "Groups": " CSC, MIS, Maths",
+    "Duration": "2",
+    "Classroom": "Hall_107 \n",
+    "Time": "16,17,",
+    "Day": "Monday"
+  },
+  {
+    "class": 4,
+    "Teacher": "Mr Jonathan",
+    "Subject": "CSC_446",
+    "Groups": " CSC",
+    "Duration": "2",
+    "Classroom": "Hall_107 \n",
+    "Time": "10,11,",
+    "Day": "Thursday"
+  },
+  {
+    "class": 7,
+    "Teacher": "Dr Iheanatu, Prof Azeta",
+    "Subject": "CSC_424",
+    "Groups": " CSC, MIS",
+    "Duration": "2",
+    "Classroom": "LT2 \n",
+    "Time": "15,16,",
+    "Day": "Wednesday"
+  },
+  {
+    "class": 0,
+    "Teacher": "Dr Emebo",
+    "Subject": "CSC_423",
+    "Groups": " CSC, Maths",
+    "Duration": "2",
+    "Classroom": "Hall_107 \n",
+    "Time": "12,13,",
+    "Day": "Tuesday"
+  },
+  {
+    "class": 10,
+    "Teacher": "Dr Okuboyejo",
+    "Subject": "MIS_422",
+    "Groups": " MIS",
+    "Duration": "2",
+    "Classroom": "Hall_201 \n",
+    "Time": "15,16,",
+    "Day": "Thursday"
+  },
+  {
+    "class": 2,
+    "Teacher": "Dr Afolabi",
+    "Subject": "CIS_418",
+    "Groups": " CSC",
+    "Duration": "3",
+    "Classroom": "LT2 \n",
+    "Time": "12,13,15,",
+    "Day": "Monday"
+  },
+  {
+    "class": 8,
+    "Teacher": "Dr Afolabi",
+    "Subject": "CSC_441",
+    "Groups": " CSC",
+    "Duration": "2",
+    "Classroom": "Hall_204 \n",
+    "Time": "12,13,",
+    "Day": "Thursday"
+  },
+  {
+    "class": 9,
+    "Teacher": "Dr Oni",
+    "Subject": "MIS_423",
+    "Groups": " MIS",
+    "Duration": "2",
+    "Classroom": "Hall_201 \n",
+    "Time": "12,13,",
+    "Day": "Thursday"
+  },
+  {
+    "class": 5,
+    "Teacher": "Dr Iheanatu, Prof Azeta",
+    "Subject": "EDS_421",
+    "Groups": " CSC, MIS",
+    "Duration": "1",
+    "Classroom": "Hall_201 \n",
+    "Time": "18,",
+    "Day": "Monday"
+  }
+]

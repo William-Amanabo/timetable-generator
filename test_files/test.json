@@ -1,0 +1,98 @@
+{
+  "Classrooms": {
+    "l": ["Computer_Lab"],
+    "h": ["Hall_306", "Hall_308", "Hall_201", "Hall_204"],
+    "hl": ["Hall_107"],
+    "t": ["LT1", "LT2"]
+  },
+  "Classes": [
+    {
+      "Subject": "CSC_424",
+      "Type": "S",
+      "Lecturer": "Dr Iheanatu, Prof Azeta",
+      "Programs": ["CSC", "MIS"],
+      "Classroom": "l",
+      "Duration": "2"
+    },
+    {
+      "Subject": "EDS_421",
+      "Type": "S",
+      "Lecturer": "Dr Iheanatu, Prof Azeta",
+      "Programs": ["CSC", "MIS"],
+      "Classroom": "hl",
+      "Duration": "1"
+    },
+    {
+      "Subject": "CIS_421",
+      "Type": "S",
+      "Lecturer": "Dr Odun-Ayo, Dr Oladimeji",
+      "Programs": ["CSC", "MIS", "Maths"],
+      "Classroom": "hl",
+      "Duration": "2"
+    },
+    {
+      "Subject": "CSC_423",
+      "Type": "S",
+      "Lecturer": "Dr Emebo",
+      "Programs": ["CSC", "Maths"],
+      "Classroom": "h",
+      "Duration": "2"
+    },
+    {
+      "Subject": "MIS_423",
+      "Type": "S",
+      "Lecturer": "Dr Oni",
+      "Programs": ["MIS"],
+      "Classroom": "h",
+      "Duration": "2"
+    },
+    {
+      "Subject": "MIS_422",
+      "Type": "S",
+      "Lecturer": "Dr Okuboyejo",
+      "Programs": ["MIS"],
+      "Classroom": "h",
+      "Duration": "2"
+    },
+    {
+      "Subject": "CIS_421",
+      "Type": "S",
+      "Lecturer": "Dr Odun-Ayo, Dr Oladimeji",
+      "Programs": ["CSC", "MIS", "Maths"],
+      "Classroom": "hl",
+      "Duration": "2"
+    },
+    {
+      "Subject": "MIS_421",
+      "Type": "S",
+      "Lecturer": "Mr Katende",
+      "Programs": ["MIS"],
+      "Classroom": "h",
+      "Duration": "2"
+    },
+    {
+      "Subject": "CSC_446",
+      "Type": "S",
+      "Lecturer": "Mr Jonathan",
+      "Programs": ["CSC"],
+      "Classroom": "h",
+      "Duration": "2"
+    },
+    {
+      "Subject": "CSC_441",
+      "Type": "S",
+      "Lecturer": "Dr Afolabi",
+      "Programs": ["CSC"],
+      "Classroom": "h",
+      "Duration": "2"
+    },
+    {
+      "Subject": "CIS_418",
+      "Type": "S",
+      "Lecturer": "Dr Afolabi",
+      "Programs": ["CSC"],
+      "Classroom": "t",
+      "Duration": "3"
+    }
+  ]
+}
